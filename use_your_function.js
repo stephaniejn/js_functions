@@ -10,41 +10,39 @@ var getItemsByBrand = function(array, brand) {
 	var newArray = [];
 	for(var i=0; i<array.length; i++){
 		if (array[i]["product"]["brand"] === brand) {
-			newArray.push(array[i]["product"]["title"])
+			newArray.push(array[i])
 		}
 	}
-	console.log(newArray);
+	return(newArray);
 }
 
 var getItemsByAuthor = function(array, author){
 	var newArray=[];
 	for(var i=0; i <array.length; i++){
 		if(array[i]["product"]["author"]["name"].split(" ")[0] === author){
-			console.log(array[i]["product"]["author"]["name"]);
-			newArray.push(array[i]["product"]["title"]);
+			newArray.push(array[i]);
 		}
 	}
-	console.log(newArray);
+	return(newArray);
 }
 
-var data = require("./products.json")
 var getAvailableProducts = function(array){
 	var newArray=[];
 	for(var i=0; i < array.length; i++){
 		if(array[i]["product"]["inventories"][0]["availability"]==="inStock"){
-			newArray.push(array[i]["product"]["title"])
+			newArray.push(array[i])
 		}
 	}
-	console.log(newArray);
+	return(newArray);
 }
 
-console.log("Items by Nikon with author eBay");
-console.log(getItemsByBrand(getItemsByAuthor((data["items"]),"eBay")), "Nikon");
+console.log("Items by Nikon with author eBay:");
+console.log(getItemsByAuthor(getItemsByBrand(data["items"], "Nikon"), "eBay"))
 
 console.log("\nItems by Sony:");
-getItemsByBrand((data["items"]), "Sony");
+console.log(getItemsByBrand((data["items"]), "Sony"));
 
 console.log("\nItems by Sony that are available:");
-console.log(getItemsByBrand(getAvailableProducts((data["items"]), "Sony")))
+console.log(getItemsByBrand(getAvailableProducts(data["items"]), "Sony"))
 
 
