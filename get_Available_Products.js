@@ -7,6 +7,7 @@ var getAvailableProducts = function(array){
 		}
 	}
 	console.log(newArray);
+	return(newArray);
 }
 
 getAvailableProducts((data["items"]));

@@ -8,6 +8,7 @@ var getItemsByBrand = function(array, brand) {
 		}
 	}
 	console.log(newArray);
+	return(newArray);
 }
 
 getItemsByBrand((data["items"]), "Nikon")

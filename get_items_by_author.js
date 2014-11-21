@@ -8,6 +8,7 @@ var getItemsByAuthor = function(array, author){
 		}
 	}
 	console.log(newArray);
+	return(newArray);
 }
 getItemsByAuthor((data["items"]),"eBay")
 
