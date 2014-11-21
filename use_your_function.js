@@ -37,12 +37,12 @@ var getAvailableProducts = function(array){
 }
 
 console.log("Items by Nikon with author eBay:");
-console.log(getItemsByAuthor(getItemsByBrand(data["items"], "Nikon"), "eBay"))
+console.log(getItemsByAuthor(getItemsByBrand(getsItems(), "Nikon"), "eBay"))
 
 console.log("\nItems by Sony:");
-console.log(getItemsByBrand((data["items"]), "Sony"));
+console.log(getItemsByBrand(getsItems(), "Sony"));
 
 console.log("\nItems by Sony that are available:");
-console.log(getItemsByBrand(getAvailableProducts(data["items"]), "Sony"))
+console.log(getItemsByBrand(getAvailableProducts(getsItems()), "Sony"))
 
 
