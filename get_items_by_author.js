@@ -4,7 +4,7 @@ var getItemsByAuthor = function(array, author){
 	var newArray=[];
 	for(var i=0; i <array.length; i++){
 		if(array[i]["product"]["author"]["name"].split(" ")[0] === author){
-			newArray.push(array[i]["product"]["title"]);
+			newArray.push(array[i]);
 		}
 	}
 	console.log(newArray);
